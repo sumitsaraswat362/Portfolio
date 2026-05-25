@@ -358,38 +358,93 @@ button { cursor: none; }
   transition: color 0.5s ease;
 }
 
-/* Buttons */
+/* ===================================================================
+   LIQUID GLASS BUTTONS
+   =================================================================== */
 .apple-button {
   display: inline-flex;
   align-items: center; justify-content: center;
-  padding: 12px 22px;
+  padding: 14px 28px;
   border-radius: 980px;
   font-size: 14px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
   cursor: none;
+  position: relative;
+  overflow: hidden;
+  
+  /* Rest State: Frosted Clear Glass */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-1);
+  
+  /* 3D Rim Lighting */
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+    0 4px 15px rgba(0, 0, 0, 0.2);
+    
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+[data-theme="light"] .apple-button {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    inset 0 2px 3px rgba(255, 255, 255, 1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05),
+    0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Specular Highlight Gloss (Top Half) */
+.apple-button::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 980px 980px 0 0;
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Hover State: Liquid Amber/Orange */
+.apple-button:hover {
+  background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%); /* Intense amber */
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  
+  /* Strong white top highlight + deep amber shadow */
+  box-shadow: 
+    inset 0 3px 4px rgba(255, 255, 255, 0.9), 
+    inset 0 -3px 8px rgba(180, 83, 9, 0.9), 
+    0 8px 25px rgba(245, 158, 11, 0.4); 
+    
+  transform: translateY(-2px) scale(1.02);
+}
+
+.apple-button:hover::after {
+  opacity: 0.9; /* Boost gloss on hover */
+}
+
+/* Click / Active State */
+.apple-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.7),
+    inset 0 -2px 4px rgba(180, 83, 9, 0.9),
+    0 2px 10px rgba(245, 158, 11, 0.3);
+}
+
+/* Override previous primary/secondary specifics to use the unified liquid style */
 .apple-button-primary {
-  background: var(--accent);
-  color: #fff;
-  border: none;
+  /* Inherits liquid glass style */
 }
-.apple-button-primary:hover {
-  filter: brightness(1.1);
-  transform: scale(1.03);
-}
-
 .apple-button-secondary {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
   margin-left: 12px;
-}
-.apple-button-secondary:hover {
-  background: var(--accent);
-  color: #fff;
 }
 
 /* Hero Visual Stack */
