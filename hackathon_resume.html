@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sumit Saraswat - Hackathon Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #ffffff;
+      --text-main: #1d1d1f;
+      --text-muted: #6e6e73;
+      --accent: #0066cc;
+      --border: #d2d2d7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #f5f5f7;
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* A4 Page Setup */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: white;
+      margin: 20px auto;
+      padding: 20mm 20mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    @media print {
+      body { background: white; margin: 0; }
+      .page { margin: 0; box-shadow: none; padding: 20mm 20mm; page-break-after: always; }
+      @page { size: A4; margin: 0; }
+    }
+
+    /* Header */
+    .header { text-align: center; border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 20px; }
+    .name { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 5px; }
+    .role { font-size: 16px; font-weight: 500; color: var(--accent); margin-bottom: 10px; }
+    .contact-info { font-size: 12px; color: var(--text-muted); font-weight: 500; display: flex; justify-content: center; gap: 15px; }
+    .contact-info a { color: var(--text-muted); text-decoration: none; }
+    
+    /* Summary */
+    .summary { font-size: 13px; text-align: justify; margin-bottom: 25px; color: #333; }
+
+    /* Sections */
+    .section { margin-bottom: 20px; }
+    .section-title { font-size: 16px; font-weight: 800; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .item { margin-bottom: 15px; }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .item-title { font-size: 14px; font-weight: 700; color: var(--text-main); }
+    .item-subtitle { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+    .item-date { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+    .item-desc { font-size: 12px; color: #333; margin-top: 4px; text-align: justify; }
+    .item-desc ul { margin-top: 5px; padding-left: 20px; }
+    .item-desc li { margin-bottom: 3px; }
+
+    /* Skills Grid */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .skill-category { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+    .skill-list { font-size: 12px; color: #444; }
+
+    .page-number { position: absolute; bottom: 15mm; right: 20mm; font-size: 12px; color: var(--text-muted); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page">
+    <div class="header">
+      <h1 class="name">Sumit Saraswat</h1>
+      <p class="role">AI Engineer & Full-Stack Innovator</p>
+      <div class="contact-info">
+        <span>📍 Mathura, India</span>
+        <a href="mailto:saraswatsumit070@gmail.com">✉️ saraswatsumit070@gmail.com</a>
+        <a href="https://github.com/sumitsaraswat362">🔗 GitHub</a>
+        <a href="https://linkedin.com/in/sumit-saraswat-31819136a">🔗 LinkedIn</a>
+      </div>
+    </div>
+
+    <p class="summary">
+      Passionate AI engineering student focused on building privacy-first tech solutions, scalable software, and edge-computing AI. Placed in the Top 100 nationwide at Meta's OpenEnv Hackathon out of 32,000+ teams as a solo freshman. Driven to architect innovative and secure tools that tackle complex challenges using modern tech stacks.
+    </p>
+
+    <div class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">GLA University</span>
+          <span class="item-date">2025 – 2029</span>
+        </div>
+        <div class="item-subtitle">Bachelor of Technology in Computer Science (B.Tech CS) - Freshman</div>
+        <div class="item-desc">
+          Currently pursuing foundational and advanced studies in algorithms, data structures, full-stack development, and machine learning.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Awards & Achievements</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">
+            Top 100 National Finalist – Meta OpenEnv Hackathon
+            <span style="font-size: 11px; font-weight: normal; margin-left: 8px;">
+              (<a href="https://github.com/sumitsaraswat362/clinical-trial-auditor" target="_blank" style="color: var(--accent); text-decoration: none;">Round 1 Repo</a> | 
+              <a href="https://github.com/sumitsaraswat362/SynthAudit.Env" target="_blank" style="color: var(--accent); text-decoration: none;">Round 2 Repo</a>)
+            </span>
+          </span>
+          <span class="item-date">2026</span>
+        </div>
+        <div class="item-desc">
+          <ul>
+            <li>Cleared Round 1 competing against 32,000+ teams of senior developers and working professionals, advancing to the Top 800.</li>
+            <li>In the offline finals at Bangalore, successfully placed in the <strong>Top 100 nationwide as a solo competitor</strong> against industry veterans and multi-member professional teams.</li>
+            <li>Built an autonomous RL auditing environment (SynthAudit) that rigorously tested the limits of Meta's Llama 3.1 405B frontier model.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Key Projects</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">
+            MedSafe AI 
+            <span style="font-size: 11px; font-weight: normal; margin-left: 8px;">
+              (<a href="https://youtu.be/6W0s1nQnAfk?si=hVl1xbu6prFYXuF_" target="_blank" style="color: var(--accent); text-decoration: none;">YouTube</a> | 
+              <a href="https://sumitsaraswat362.github.io/medsafe-ai/" target="_blank" style="color: var(--accent); text-decoration: none;">Live Demo</a> | 
+              <a href="https://github.com/sumitsaraswat362/medsafe-ai" target="_blank" style="color: var(--accent); text-decoration: none;">GitHub</a>)
+            </span>
+          </span>
+          <span class="item-date">2026</span>
+        </div>
+        <div class="item-subtitle">Offline-First Clinical Pharmacologist (WebGPU & Local LLM)</div>
+        <div class="item-desc">
+          <ul>
+            <li>Architected an offline-first web app running a 1-Billion parameter LLM (Llama 3.2 1B) entirely in the browser via WebGPU using <code>@mlc-ai/web-llm</code>.</li>
+            <li>Integrated Tesseract.js for on-device OCR prescription scanning and Web Speech API for dynamic voice input, analyzing drug-food-supplement interactions.</li>
+            <li>Ensured 100% data privacy and zero cloud server costs by executing all inference and image processing directly on the client's hardware.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">
+            CrisisGuard AI
+            <span style="font-size: 11px; font-weight: normal; margin-left: 8px;">
+              (<a href="https://youtu.be/dM6UjcaDVgI?si=4S7QjWIonox1CcUv" target="_blank" style="color: var(--accent); text-decoration: none;">YouTube</a> | 
+              <a href="https://sumitsaraswat362.github.io/crisisguard-ai/" target="_blank" style="color: var(--accent); text-decoration: none;">Live Demo</a> | 
+              <a href="https://github.com/sumitsaraswat362/crisisguard-ai" target="_blank" style="color: var(--accent); text-decoration: none;">GitHub</a>)
+            </span>
+          </span>
+          <span class="item-date">2026</span>
+        </div>
+        <div class="item-subtitle">Privacy-First Mental Health Crisis Detection</div>
+        <div class="item-desc">
+          <ul>
+            <li>Developed a high-performance NLP engine that runs 100% locally in the browser using edge computing paradigms.</li>
+            <li>Detects 9 distinct categories of mental health crises with zero data surveillance.</li>
+            <li>Integrated a secure GPS-based counselor finder mapped to 13+ countries utilizing geolocation APIs.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-number">1 / 2</div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page">
+    <div class="section">
+      <h2 class="section-title">Key Projects (Continued)</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">
+            Equity-Aware Survival Analysis
+            <span style="font-size: 11px; font-weight: normal; margin-left: 8px;">
+              (<a href="https://github.com/sumitsaraswat362/equity-aware-survival-analysis" target="_blank" style="color: var(--accent); text-decoration: none;">GitHub</a>)
+            </span>
+          </span>
+          <span class="item-date">2024</span>
+        </div>
+        <div class="item-subtitle">Auditing Machine Learning Fairness</div>
+        <div class="item-desc">
+          <ul>
+            <li>Engineered a computational pipeline auditing survival models across 170,000+ records to identify rare but catastrophic false-negative failure modes.</li>
+            <li>Applied advanced statistical analysis and fairness-aware machine learning techniques to evaluate human-centric safety across demographic populations.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-category">Programming Languages</div>
+          <div class="skill-list">Python, JavaScript / TypeScript, HTML/CSS, C/C++</div>
+        </div>
+        <div>
+          <div class="skill-category">AI & Machine Learning</div>
+          <div class="skill-list">PyTorch, Reinforcement Learning, WebGPU LLMs, Edge Computing</div>
+        </div>
+        <div>
+          <div class="skill-category">Frameworks & Libraries</div>
+          <div class="skill-list">React.js, Vite, TailwindCSS, TensorFlow, Pandas</div>
+        </div>
+        <div>
+          <div class="skill-category">Tools & Infrastructure</div>
+          <div class="skill-list">Docker, Git/GitHub, Gymnasium, Tesseract.js</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Hackathon Readiness & Approach</h2>
+      <p class="summary" style="margin-bottom: 0;">
+        My approach to building software is intensely rapid, iterative, and inherently interdisciplinary. I thrive in high-pressure environments, leveraging my experience as a solo competitor who outperformed thousands of senior professionals at the Meta OpenEnv finals. By combining edge computing (CrisisGuard AI) with WebGPU local inference (MedSafe AI), I build robust, scalable architectures that solve complex problems without sacrificing privacy or user experience. I am highly adaptable and excited to bring this relentless work ethic to the next major engineering challenge.
+      </p>
+    </div>
+    
+    <div class="page-number">2 / 2</div>
+  </div>
+
+</body>
+</html>

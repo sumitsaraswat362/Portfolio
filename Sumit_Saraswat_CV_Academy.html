@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sumit_Saraswat_CV_Academy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #ffffff;
+      --text-main: #1d1d1f;
+      --text-muted: #86868b;
+      --accent: #0071e3;
+      --border: #d2d2d7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #f5f5f7;
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* A4 Page Setup */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: white;
+      margin: 20px auto;
+      padding: 20mm 20mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    @media print {
+      body { background: white; margin: 0; }
+      .page { margin: 0; box-shadow: none; padding: 20mm 20mm; page-break-after: always; }
+      @page { size: A4; margin: 0; }
+    }
+
+    /* Header */
+    .header { text-align: center; border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 20px; }
+    .name { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 5px; }
+    .role { font-size: 16px; font-weight: 500; color: var(--accent); margin-bottom: 10px; }
+    .contact-info { font-size: 12px; color: var(--text-muted); font-weight: 500; display: flex; justify-content: center; gap: 15px; }
+    .contact-info a { color: var(--text-muted); text-decoration: none; }
+    
+    /* Summary */
+    .summary { font-size: 13px; text-align: justify; margin-bottom: 25px; color: #333; }
+
+    /* Sections */
+    .section { margin-bottom: 20px; }
+    .section-title { font-size: 16px; font-weight: 800; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .item { margin-bottom: 15px; }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+    .item-title { font-size: 14px; font-weight: 700; color: var(--text-main); }
+    .item-subtitle { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+    .item-date { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+    .item-desc { font-size: 12px; color: #333; margin-top: 4px; text-align: justify; }
+    .item-desc ul { margin-top: 5px; padding-left: 20px; }
+    .item-desc li { margin-bottom: 3px; }
+
+    /* Skills Grid */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .skill-category { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+    .skill-list { font-size: 12px; color: #444; }
+
+    .page-number { position: absolute; bottom: 15mm; right: 20mm; font-size: 12px; color: var(--text-muted); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page">
+    <div class="header">
+      <h1 class="name">Sumit Saraswat</h1>
+      <p class="role">AI Engineer & Healthcare Innovator</p>
+      <div class="contact-info">
+        <span>📍 Mathura, India</span>
+        <a href="mailto:saraswatsumit070@gmail.com">✉️ saraswatsumit070@gmail.com</a>
+        <a href="https://github.com/sumitsaraswat362">🔗 GitHub</a>
+        <a href="https://linkedin.com/in/sumit-saraswat-31819136a">🔗 LinkedIn</a>
+      </div>
+    </div>
+
+    <p class="summary">
+      Passionate AI engineering student focused on building privacy-first healthcare solutions and edge-computing AI. Solo finalist at India's largest Meta OpenEnv Hackathon out of 32,000+ teams. Driven to create technology that respects human dignity, ensuring powerful AI tools are secure, client-side, and accessible.
+    </p>
+
+    <div class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">GLA University</span>
+          <span class="item-date">2023 – Present</span>
+        </div>
+        <div class="item-subtitle">Bachelor of Technology in Computer Science (B.Tech CS) - Freshman</div>
+        <div class="item-desc">
+          Currently pursuing foundational and advanced studies in algorithms, data structures, and machine learning.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Awards & Achievements</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Top Finalist – Meta OpenEnv Hackathon (Bangalore)</span>
+          <span class="item-date">2024</span>
+        </div>
+        <div class="item-desc">
+          <ul>
+            <li>Selected as a Solo Participant out of 32,000+ team submissions for Meta's 48-hour offline finals.</li>
+            <li>Built an autonomous clinical trial auditing RL environment and SynthAudit benchmark that exposed limitations in Meta's Llama 3.1 405B model.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Selected Participant – UOE Summer of Code</span>
+          <span class="item-date">2026</span>
+        </div>
+        <div class="item-desc">
+          <ul>
+            <li>Selected for my project "CrisisGuard AI", demonstrating exceptional capabilities in client-side NLP and data privacy.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Key Projects (Experience)</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">CrisisGuard AI</span>
+          <span class="item-date">Self-Initiated</span>
+        </div>
+        <div class="item-subtitle">Privacy-First Mental Health Crisis Detection</div>
+        <div class="item-desc">
+          <ul>
+            <li>Developed a clinical-grade NLP engine that runs 100% locally in the browser using edge computing.</li>
+            <li>Detects 9 categories of mental health crises with zero data surveillance.</li>
+            <li>Integrated a secure GPS-based counselor finder mapped to 13+ countries.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">MedGraph-AI</span>
+          <span class="item-date">Self-Initiated</span>
+        </div>
+        <div class="item-subtitle">Evidence-Based Medical Chatbot</div>
+        <div class="item-desc">
+          <ul>
+            <li>Built a healthcare knowledge graph system connecting drugs, treatments, and symptoms.</li>
+            <li>Implemented Retrieval-Augmented Generation (RAG) to ensure AI responses are grounded in structured, factual data rather than hallucinations.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-number">1 / 2</div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page">
+    <div class="section">
+      <h2 class="section-title">Key Projects (Continued)</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Breast Cancer Diagnostic Model</span>
+          <span class="item-date">Self-Initiated</span>
+        </div>
+        <div class="item-subtitle">Machine Learning for Oncology</div>
+        <div class="item-desc">
+          <ul>
+            <li>Developed an end-to-end predictive machine learning pipeline to classify breast cancer tumors as benign or malignant based on cellular data.</li>
+            <li>Performed extensive data preprocessing and feature engineering to maximize recall and precision, crucial for medical diagnostic tools.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-category">Programming Languages</div>
+          <div class="skill-list">Python, JavaScript, HTML, CSS, C/C++</div>
+        </div>
+        <div>
+          <div class="skill-category">AI & Machine Learning</div>
+          <div class="skill-list">Reinforcement Learning, NLP, Knowledge Graphs, RAG, Edge Computing</div>
+        </div>
+        <div>
+          <div class="skill-category">Data Science Libraries</div>
+          <div class="skill-list">TensorFlow, Scikit-learn, Pandas, NumPy</div>
+        </div>
+        <div>
+          <div class="skill-category">Tools & Frameworks</div>
+          <div class="skill-list">Docker, Git/GitHub, Meta OpenEnv, Gymnasium</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Motivation & Interdisciplinary Approach</h2>
+      <p class="summary" style="margin-bottom: 0;">
+        My approach to technology is inherently interdisciplinary—I do not just write code; I design systems that sit at the intersection of healthcare ethics, data privacy, and advanced machine learning. By combining edge computing with mental health (CrisisGuard) and strict data structuring with medical diagnostics (MedGraph-AI), I aim to create interfaces that are not only technologically advanced but also deeply empathetic. I am excited to bring this relentless work ethic and passion for human-centric design to the 9-month learning journey at the Apple Developer Academy.
+      </p>
+    </div>
+    
+    <div class="page-number">2 / 2</div>
+  </div>
+
+</body>
+</html>

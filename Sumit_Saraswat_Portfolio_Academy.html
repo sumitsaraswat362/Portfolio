@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sumit_Saraswat_Portfolio_Academy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    
+    :root {
+      --bg: #050505;
+      --surface: rgba(20,20,20,0.6);
+      --text-main: #f5f5f7;
+      --text-muted: #a1a1a6;
+      --accent: #00ffae;
+      --border: rgba(255,255,255,0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* A4 Landscape Page Setup */
+    .page {
+      width: 297mm;
+      height: 210mm;
+      background: radial-gradient(circle at top right, #11261d, #050505 40%, #080a0f 100%);
+      margin: 20px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      display: flex;
+    }
+
+    @media print {
+      body { background: var(--bg); margin: 0; }
+      .page { margin: 0; box-shadow: none; page-break-after: always; }
+      @page { size: A4 landscape; margin: 0; }
+    }
+
+    /* --- Layout Columns --- */
+    .image-col {
+      width: 55%;
+      padding: 15mm 10mm 15mm 20mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .content-col {
+      width: 45%;
+      padding: 15mm 20mm 15mm 10mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .img-contain-landscape {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      border: 1px solid var(--border);
+    }
+
+    .img-cert {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* --- Cover Page --- */
+    .cover {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30mm;
+    }
+    .cover-left { width: 60%; }
+    .cover-right { width: 35%; display: flex; justify-content: flex-end; }
+    .cover-title { font-size: 64px; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 5px; line-height: 1.1; }
+    .cover-subtitle { font-size: 20px; font-weight: 600; color: var(--accent); margin-bottom: 25px; }
+    .cover-academy { font-size: 14px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; opacity: 0.8; }
+    
+    .social-links { display: flex; gap: 20px; margin-top: 30px; }
+    .social-links a { display: flex; align-items: center; gap: 8px; color: var(--text-main); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+    .social-links a:hover { color: var(--accent); }
+    .social-links svg { width: 24px; height: 24px; fill: currentColor; }
+    
+    .photo-wrapper {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, var(--accent), #0080ff);
+      box-shadow: 0 0 50px rgba(0,255,174,0.2);
+    }
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #050505;
+    }
+
+    /* --- Project Pages --- */
+    .project-header { margin-bottom: 12px; }
+    .project-title { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; color: white; line-height: 1.1; }
+    .project-summary { font-size: 14px; font-weight: 500; color: var(--text-muted); margin-top: 6px; line-height: 1.4; }
+    
+    .meta-grid {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      background: var(--surface);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+    .meta-item { display: flex; flex-direction: column; }
+    .meta-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+    .meta-value { font-size: 11px; font-weight: 600; color: var(--text-main); }
+
+    .section-title { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 4px; margin-top: 12px; text-transform: uppercase; letter-spacing: 1px; }
+    .content-text { font-size: 12px; color: var(--text-muted); text-align: left; line-height: 1.5; }
+    .content-text strong { color: white; }
+
+    .links { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .link-item { 
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700; color: var(--bg); 
+      background: var(--text-main); padding: 8px 14px; border-radius: 100px; 
+      text-decoration: none;
+    }
+    .link-item.secondary {
+      background: var(--surface);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .page-number { position: absolute; bottom: 12mm; left: 20mm; font-size: 10px; color: var(--text-muted); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+    .decor-line { position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent), #0080ff); }
+
+    .placeholder-box {
+      width: 100%; height: 100%; max-height: 400px;
+      border-radius: 12px; border: 1px dashed rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.02); color: var(--text-muted);
+      font-weight: 600; letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER -->
+  <div class="page cover">
+    <div class="decor-line"></div>
+    <div class="cover-left">
+      <div class="cover-academy">Apple Developer Academy Indonesia — Tech Track Applicant</div>
+      <h1 class="cover-title">Sumit<br>Saraswat</h1>
+      <p class="cover-subtitle">AI Engineer & Healthcare Innovator</p>
+      
+      <p style="font-size: 15px; color: var(--text-muted); max-width: 480px; line-height: 1.6; margin-bottom: 10px;">
+        "The most powerful technology is the technology people trust enough to use."
+      </p>
+      <p style="font-size: 13px; color: #777; max-width: 450px; line-height: 1.5;">
+        Showcasing privacy-first healthcare AI, edge computing, equity-aware medical modeling, and my journey from a solo freshman to the top 100 at Meta's nationwide hackathon. I build AI that respects human dignity.
+      </p>
+
+      <div style="margin-top: 25px; margin-bottom: 5px;">
+        <div style="font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Core Tech Arsenal</div>
+        
+        <div style="font-size: 13px; color: var(--text-main); margin-bottom: 4px;">
+          <span style="font-weight: 700; color: white;">Machine Learning & Data:</span> <span style="color: var(--text-muted);">Python, PyTorch (RL Frameworks), SEER Registry Auditing</span>
+        </div>
+        <div style="font-size: 13px; color: var(--text-main); margin-bottom: 4px;">
+          <span style="font-weight: 700; color: white;">Edge & Web Integration:</span> <span style="color: var(--text-muted);">JavaScript (Vanilla Edge NLP), WebSpeech API, HTML/CSS</span>
+        </div>
+        <div style="font-size: 13px; color: var(--text-main); margin-bottom: 4px;">
+          <span style="font-weight: 700; color: white;">Design & Ecosystem:</span> <span style="color: var(--text-muted);">Figma, Apple HIG Concept Prototyping</span>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="mailto:saraswatsumit070@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M12 12.713l11.985-8.713h-23.97l11.985 8.713zm0 2.574l-12-8.725v13.438h24v-13.438l-12 8.725z"/></svg>
+          Email
+        </a>
+        <a href="https://linkedin.com/in/sumit-saraswat-31819136a" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/sumitsaraswat362" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+    <div class="cover-right">
+      <div class="photo-wrapper">
+        <img src="IMG_20240602_143420 copy.jpg" alt="Sumit Saraswat">
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: PROJECT 1 (APPLE) -->
+  <div class="page">
+    <div class="decor-line"></div>
+    <div class="image-col">
+      <div style="display: flex; flex-direction: column; gap: 25px; align-items: center; justify-content: center; width: 100%; height: 100%;">
+        <!-- iPhones Row -->
+        <div style="display: flex; gap: 15px; align-items: center; justify-content: center; width: 100%;">
+          <img src="vocalis_ui/figma_iphone1_v2.png" style="width: 32%; height: auto; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.9); border: 2px solid #050505; outline: 1px solid rgba(255,255,255,0.15);" alt="Figma Vocalis iPhone 1">
+          <img src="vocalis_ui/figma_iphone2_v2.png" style="width: 32%; height: auto; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.9); border: 2px solid #050505; outline: 1px solid rgba(255,255,255,0.15);" alt="Figma Vocalis iPhone 2">
+          <img src="vocalis_ui/figma_iphone3_v2.png" style="width: 32%; height: auto; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.9); border: 2px solid #050505; outline: 1px solid rgba(255,255,255,0.15);" alt="Figma Vocalis iPhone 3">
+        </div>
+        <!-- Apple Watches Row -->
+        <div style="display: flex; gap: 25px; align-items: center; justify-content: center; width: 100%;">
+          <img src="vocalis_ui/figma_watch1_v2.png" style="width: 24%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.9); border: 2px solid #1c1c1e; outline: 1px solid rgba(255,255,255,0.15);" alt="Figma Vocalis Watch 1">
+          <img src="vocalis_ui/figma_watch2_v2.png" style="width: 24%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.9); border: 2px solid #1c1c1e; outline: 1px solid rgba(255,255,255,0.15);" alt="Figma Vocalis Watch 2">
+          <img src="vocalis_ui/figma_watch3_v2.png" style="width: 24%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.9); border: 2px solid #1c1c1e; outline: 1px solid rgba(255,255,255,0.15);" alt="Figma Vocalis Watch 3">
+        </div>
+      </div>
+    </div>
+    <div class="content-col">
+      <div class="project-header">
+        <h1 class="project-title">1. Vocalis — Voice-First Accessibility Concept for iOS & watchOS</h1>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">Self-Initiated Concept Framework</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">Solo UX Architect & System Designer</div>
+        </div>
+      </div>
+
+      <div class="section-title">One-Sentence Summary</div>
+      <p class="content-text">An on-device accessibility framework mapping complex medical NLP tokenization into a zero-touch, voice-driven interface.</p>
+
+      <div class="section-title">The Impact</div>
+      <p class="content-text">Raw backend logic is useless if the interface lacks human empathy. Standard health applications actively exclude elderly or motor-impaired users through complex touchscreen demands. Applying strict multimedia design principles, I architected this concept to translate my existing web-based NLP engine into an Apple HIG-compliant, multimodal voice interface. By shifting the input method from screen-tapping to ambient voice logging via watchOS, the system restores digital healthcare access to vulnerable demographics without compromising local data privacy.</p>
+
+      <div class="section-title">What I Learned & My Objective</div>
+      <p class="content-text">Mastering these constraints taught me the spatial psychology separating iOS interfaces from glanceable watchOS environments. I have the backend logic built and the visual architecture locked. My explicit goal for the Apple Developer Academy is to master native Swift and CoreML to compile this conceptual framework into deployed, wearable hardware.</p>
+
+      <div class="page-number">01 / VOCALIS (ACCESSIBILITY CONCEPT)</div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: PROJECT 2 (META HACKATHON COMBINED) -->
+  <div class="page">
+    <div class="decor-line"></div>
+    <div class="image-col">
+      <img src="Top 100 Card.jpg" class="img-cert" alt="Top 100 Certificate">
+    </div>
+    <div class="content-col">
+      <div class="project-header">
+        <h1 class="project-title">2. Meta OpenEnv Hackathon</h1>
+        <p class="project-summary">RL Auditor & SynthAudit Benchmark (Top 100 Finals).</p>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">Self-Initiated Competitive Sprint (Top 100 Finals)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">Solo Competitor</div>
+        </div>
+      </div>
+
+      <div class="section-title">Round 1: The Clinical Auditor & Benchmark</div>
+      <p class="content-text">I entered this nationwide competition as a solo freshman. I developed an autonomous RL clinical auditing environment and the SynthAudit benchmark. <strong>Meta's world's strongest frontier model, Llama 3.1 405B, scored only 0.34 out of 1.0 (just 34%)</strong> navigating the highly complex autonomous environment I built. I made it to the <strong>Top 800 in Round 1 out of 32,000+ teams</strong> of senior developers and working professionals.</p>
+
+      <div class="section-title">Round 2: The Final Bangalore Showdown</div>
+      <p class="content-text">In the offline finals in Bangalore, I competed against the 800 best senior developer teams and working professionals. I officially made it to the <strong>Top 100</strong> nationwide.</p>
+
+      <div class="section-title">What I Learned & Achieved</div>
+      <p class="content-text">Clarity of thought beats sheer manpower. I gained deep expertise in Python, RL, and Docker. Furthermore, <strong>I trained the AI model and the overall performance increased by 283%.</strong></p>
+
+      <div class="links">
+        <a href="https://github.com/sumitsaraswat362/clinical-trial-auditor" class="link-item secondary">Round 1 Repo</a>
+        <a href="https://github.com/sumitsaraswat362/SynthAudit.Env" class="link-item secondary">Round 2 Repo</a>
+      </div>
+      <div class="page-number">02 / META OPENENV HACKATHON</div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: PROJECT 3 (CRISISGUARD) -->
+  <div class="page">
+    <div class="decor-line"></div>
+    <div class="image-col">
+      <img src="CrisisGiard.png" class="img-contain-landscape" alt="CrisisGuard UI">
+    </div>
+    <div class="content-col">
+      <div class="project-header">
+        <h1 class="project-title">3. CrisisGuard AI</h1>
+        <p class="project-summary">Privacy-First Mental Health Crisis Detection using Edge Computing.</p>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">Self-Initiated Project</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">Individual Project</div>
+        </div>
+      </div>
+
+      <div class="section-title">One-Sentence Summary</div>
+      <p class="content-text">A clinical-grade NLP system detecting 9 categories of mental health crises that runs entirely in the browser, ensuring absolute data privacy.</p>
+
+      <div class="section-title">The Impact</div>
+      <p class="content-text">Analyzes deeply personal mental health text while guaranteeing <strong>zero data surveillance</strong>. It features a severity scoring system and a GPS-based counselor finder for 13+ countries. Successfully deployed live and selected for the UOE Summer of Code 2026.</p>
+
+      <div class="section-title">What I Learned</div>
+      <p class="content-text">I learned that in healthcare, privacy is a prerequisite for trust. By mastering "Edge Computing", I figured out how to run complex Natural Language Processing models entirely client-side using JavaScript, avoiding centralized cloud processing.</p>
+
+      <div class="links">
+        <a href="https://sumitsaraswat362.github.io/crisisguard-ai/" class="link-item">Live Website ↗</a>
+        <a href="https://youtu.be/dM6UjcaDVgI?si=qSpmMghheZpk2lf8" class="link-item">YouTube ▶</a>
+        <a href="https://github.com/sumitsaraswat362/crisisguard-ai" class="link-item secondary">GitHub</a>
+      </div>
+      <div class="page-number">03 / CRISISGUARD AI</div>
+    </div>
+  </div>
+
+  <!-- PAGE 5: PROJECT 4 (MEDSAFE AI) -->
+  <div class="page">
+    <div class="decor-line"></div>
+    <div class="image-col">
+      <img src="Algofest Home page.png" class="img-contain-landscape" alt="MedSafe AI UI">
+    </div>
+    <div class="content-col">
+      <div class="project-header">
+        <h1 class="project-title">4. MedSafe AI</h1>
+        <p class="project-summary">Privacy-preserving on-device clinical pharmacologist.</p>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">Hackathon Project</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">Solo Full-Stack AI Engineer</div>
+        </div>
+      </div>
+
+      <div class="section-title">One-Sentence Summary</div>
+      <p class="content-text">An offline-first, WebGPU-accelerated local LLM (Llama 3.2 1B) that analyzes complex drug-food-supplement interactions using on-device OCR, ensuring zero latency and 100% HIPAA-compliant data privacy.</p>
+
+      <div class="section-title">The Impact</div>
+      <p class="content-text">Polypharmacy leads to millions of adverse drug events annually. Current AI solutions send highly sensitive patient data to remote cloud servers, causing severe privacy violations. I architected MedSafe AI to run a 1-Billion parameter Llama 3.2 model entirely in the browser via WebGPU. By integrating local OCR prescription scanning and the Web Speech API, this tool acts as a private, on-device clinical pharmacologist, keeping patient data strictly on their own hardware.</p>
+
+      <div class="section-title">What I Learned</div>
+      <p class="content-text">I learned how to push the boundaries of Edge Computing and Local AI. Compiling a Large Language Model to run inside a standard web browser taught me WebGPU memory constraints and hardware-accelerated inferencing. Designing the Apple Siri-inspired dynamic glassmorphism UI reinforced my belief that advanced AI must be accessible, responsive, and visually intuitive.</p>
+
+      <div class="links">
+        <a href="https://sumitsaraswat362.github.io/medsafe-ai/" class="link-item">Live Website ↗</a>
+        <a href="https://youtu.be/6W0s1nQnAfk?si=hVl1xbu6prFYXuF_" class="link-item">YouTube ▶</a>
+        <a href="https://github.com/sumitsaraswat362/medsafe-ai" class="link-item secondary">GitHub</a>
+      </div>
+      <div class="page-number">04 / MEDSAFE AI</div>
+    </div>
+  </div>
+
+  <!-- PAGE 6: PROJECT 5 (EQUITY AWARE) -->
+  <div class="page">
+    <div class="decor-line"></div>
+    <div class="image-col">
+      <img src="equity-aware.png" class="img-contain-landscape" alt="Equity-Aware AI Model">
+    </div>
+    <div class="content-col">
+      <div class="project-header">
+        <h1 class="project-title">5. Equity-Aware Audit</h1>
+        <p class="project-summary">An equity-aware audit of breast cancer survival models.</p>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">Type</div>
+          <div class="meta-value">Research Project</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">Individual Project</div>
+        </div>
+      </div>
+
+      <div class="section-title">One-Sentence Summary</div>
+      <p class="content-text">A computational oncology pipeline auditing breast cancer survival models (RSF & Cox) across <strong>170,000+ patient records</strong> from the SEER registry to identify rare but clinically catastrophic failure modes.</p>
+
+      <div class="section-title">The Impact</div>
+      <p class="content-text">Models often report strong global accuracy while silently failing the patients they intend to protect. Using <strong>170,000+ patients data from SEER</strong>, my Equity-Aware Framework shifts the focus from <em>"Can we predict?"</em> to <em>"When should we not trust the prediction?"</em> I discovered severe false-negative failure modes masked within "Low-Risk" subgroups, ensuring future diagnostic AI does not discriminate across different demographic populations.</p>
+
+      <div class="section-title">What I Learned</div>
+      <p class="content-text">I learned that optimizing an AI strictly for global accuracy is dangerous in medicine. By utilizing SEER breast cancer registry data with strict temporal splits (2004–2015 train, 2016–2018 test), I mastered advanced statistical analysis and fairness-aware machine learning techniques to evaluate human-centric safety.</p>
+
+      <div class="links">
+        <a href="https://github.com/sumitsaraswat362/equity-aware-survival-analysis" class="link-item secondary">GitHub Repository</a>
+      </div>
+      <div class="page-number">05 / EQUITY-AWARE SURVIVAL ANALYSIS</div>
+    </div>
+  </div>
+
+</body>
+</html>
