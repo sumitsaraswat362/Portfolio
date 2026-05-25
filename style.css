@@ -773,81 +773,107 @@ button { cursor: none; }
   transform: translateY(0);
 }
 
-/* ---------- RESUME VIEWER ---------- */
-.resume-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
+/* ---------- PETROS CARD STYLE (RESUME & CONTACT) ---------- */
+.petros-card {
+  background: #1c1c1e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.06);
   display: flex;
   flex-direction: column;
   margin-bottom: 32px;
-}
-.resume-header {
-  padding: 24px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.02);
-}
-.resume-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.resume-iframe-container {
-  width: 100%;
-  height: 800px;
-  background: var(--bg-body);
-}
-.resume-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ---------- CONTACT SECTION ---------- */
-.contact-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
-  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
   padding: 48px;
-  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.06);
-  margin-bottom: 32px;
+  position: relative;
+  z-index: 10;
 }
-.contact-headline {
-  font-size: clamp(28px, 4vw, 42px);
+.petros-eyebrow {
+  color: #38bdf8;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.petros-headline {
+  font-size: clamp(32px, 4vw, 48px);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -0.02em;
-  margin-top: 16px;
-  color: var(--text-1);
+  margin-top: 0;
+  color: #ffffff;
   max-width: 800px;
 }
-.contact-subhead {
+.petros-subhead {
   font-size: clamp(16px, 1.5vw, 18px);
   line-height: 1.5;
-  color: var(--text-2);
+  color: #a1a1a6;
   margin-top: 24px;
-  max-width: 600px;
+  max-width: 700px;
 }
-.contact-primary-actions {
+.petros-main-actions {
   display: flex;
   gap: 16px;
   margin-top: 40px;
   flex-wrap: wrap;
 }
-.contact-social-links {
+.petros-pill-row {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   margin-top: 40px;
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
   flex-wrap: wrap;
+}
+.petros-pill {
+  padding: 8px 16px;
+  border-radius: 980px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a1a1a6;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+.petros-pill:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+/* ---------- RESUME SPECIFIC ---------- */
+#resume .petros-card {
+  padding: 0;
+}
+.petros-card-header {
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.petros-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 4px;
+}
+.petros-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.petros-iframe-wrapper {
+  background: #2c2c2e;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 0 40px 40px 40px;
+  height: 800px;
+}
+.resume-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+  border-radius: 8px;
 }
 
 /* ---------- FOOTER ---------- */
@@ -876,14 +902,18 @@ button { cursor: none; }
 }
 
 @media (max-width: 768px) {
-  .resume-header {
+  .petros-card-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
     padding: 20px;
   }
-  .contact-card {
+  .petros-card {
     padding: 32px 24px;
+  }
+  .petros-iframe-wrapper {
+    margin: 0 20px 20px 20px;
+    padding: 10px;
   }
 }
 
