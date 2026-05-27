@@ -5,219 +5,401 @@
   <title>Sumit_Saraswat_CV_Academy</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-    
+
     :root {
-      --bg: #ffffff;
-      --text-main: #1d1d1f;
-      --text-muted: #86868b;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
       --accent: #0071e3;
       --border: #d2d2d7;
+      --light-bg: #f5f5f7;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', -apple-system, sans-serif;
-      background: #f5f5f7;
-      color: var(--text-main);
-      line-height: 1.5;
+      background: #e8e8ed;
+      color: var(--text);
       -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
-    /* A4 Page Setup */
     .page {
       width: 210mm;
       height: 297mm;
       background: white;
       margin: 20px auto;
-      padding: 20mm 20mm;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 14mm 16mm 12mm 16mm;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
       position: relative;
       overflow: hidden;
-      page-break-after: always;
     }
 
     @media print {
       body { background: white; margin: 0; }
-      .page { margin: 0; box-shadow: none; padding: 20mm 20mm; page-break-after: always; }
+      .page { margin: 0; box-shadow: none; }
       @page { size: A4; margin: 0; }
     }
 
-    /* Header */
-    .header { text-align: center; border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 20px; }
-    .name { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 5px; }
-    .role { font-size: 16px; font-weight: 500; color: var(--accent); margin-bottom: 10px; }
-    .contact-info { font-size: 12px; color: var(--text-muted); font-weight: 500; display: flex; justify-content: center; gap: 15px; }
-    .contact-info a { color: var(--text-muted); text-decoration: none; }
-    
-    /* Summary */
-    .summary { font-size: 13px; text-align: justify; margin-bottom: 25px; color: #333; }
+    /* ===== HEADER ===== */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--text);
+      margin-bottom: 12px;
+    }
+    .header-left {}
+    .name {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+    .role {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 3px;
+      letter-spacing: 0.02em;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 10.5px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 500;
+    }
+    .header-right a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .header-right a:hover { color: var(--accent); }
 
-    /* Sections */
-    .section { margin-bottom: 20px; }
-    .section-title { font-size: 16px; font-weight: 800; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-    
-    .item { margin-bottom: 15px; }
-    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
-    .item-title { font-size: 14px; font-weight: 700; color: var(--text-main); }
-    .item-subtitle { font-size: 13px; font-weight: 600; color: var(--text-muted); }
-    .item-date { font-size: 12px; font-weight: 500; color: var(--text-muted); }
-    .item-desc { font-size: 12px; color: #333; margin-top: 4px; text-align: justify; }
-    .item-desc ul { margin-top: 5px; padding-left: 20px; }
-    .item-desc li { margin-bottom: 3px; }
+    /* ===== SUMMARY ===== */
+    .summary {
+      font-size: 10.5px;
+      line-height: 1.55;
+      color: #333;
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+    .summary strong { font-weight: 700; }
 
-    /* Skills Grid */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-    .skill-category { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
-    .skill-list { font-size: 12px; color: #444; }
+    /* ===== SECTION ===== */
+    .section { margin-bottom: 10px; }
+    .section-title {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
 
-    .page-number { position: absolute; bottom: 15mm; right: 20mm; font-size: 12px; color: var(--text-muted); font-weight: 500; }
+    /* ===== TWO-COL LAYOUT ===== */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+    }
+
+    /* ===== ITEMS ===== */
+    .item { margin-bottom: 8px; }
+    .item:last-child { margin-bottom: 0; }
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .item-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .item-badge {
+      font-size: 9px;
+      font-weight: 600;
+      color: white;
+      background: var(--accent);
+      padding: 1px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
+    }
+    .item-badge.team {
+      background: #30d158;
+    }
+    .item-sub {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+    .item-desc {
+      font-size: 10px;
+      color: #444;
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+    .item-desc ul {
+      padding-left: 14px;
+      margin: 0;
+    }
+    .item-desc li {
+      margin-bottom: 1px;
+    }
+
+    /* ===== EDUCATION ===== */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .edu-title {
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+    .edu-date {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .edu-sub {
+      font-size: 10px;
+      color: #444;
+      margin-top: 1px;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .skill-pill {
+      font-size: 9.5px;
+      font-weight: 600;
+      background: var(--light-bg);
+      color: var(--text);
+      padding: 3px 9px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+    }
+
+    /* ===== AWARDS ===== */
+    .award-item {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+      margin-bottom: 3px;
+      font-size: 10px;
+      color: #444;
+      line-height: 1.45;
+    }
+    .award-bullet {
+      font-size: 11px;
+      color: var(--accent);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .award-item strong {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      position: absolute;
+      bottom: 10mm;
+      left: 16mm;
+      right: 16mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 6px;
+    }
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
 
-  <!-- PAGE 1 -->
   <div class="page">
+
+    <!-- HEADER -->
     <div class="header">
-      <h1 class="name">Sumit Saraswat</h1>
-      <p class="role">AI Engineer & Healthcare Innovator</p>
-      <div class="contact-info">
-        <span>📍 Mathura, India</span>
-        <a href="mailto:saraswatsumit070@gmail.com">✉️ saraswatsumit070@gmail.com</a>
-        <a href="https://github.com/sumitsaraswat362">🔗 GitHub</a>
-        <a href="https://linkedin.com/in/sumit-saraswat-31819136a">🔗 LinkedIn</a>
+      <div class="header-left">
+        <h1 class="name">Sumit Saraswat</h1>
+        <p class="role">AI Engineer · Healthcare Innovator · Privacy Architect</p>
+      </div>
+      <div class="header-right">
+        Mathura, India<br>
+        <a href="mailto:saraswatsumit070@gmail.com">saraswatsumit070@gmail.com</a><br>
+        <a href="https://github.com/sumitsaraswat362">github.com/sumitsaraswat362</a><br>
+        <a href="https://www.linkedin.com/in/sumit-saraswat-31819136a/">LinkedIn</a>
       </div>
     </div>
 
+    <!-- SUMMARY -->
     <p class="summary">
-      Passionate AI engineering student focused on building privacy-first healthcare solutions and edge-computing AI. Solo finalist at India's largest Meta OpenEnv Hackathon out of 32,000+ teams. Driven to create technology that respects human dignity, ensuring powerful AI tools are secure, client-side, and accessible.
+      AI engineering student building <strong>privacy-first healthcare solutions</strong> and <strong>edge-computing AI</strong>. Solo freshman finalist at India's largest Meta Hackathon out of <strong>32,000+ teams</strong>, selected for the <strong>Top 100 Bangalore Finals</strong>. I ship production-grade systems that prove powerful AI and human dignity are not trade-offs—8+ AI projects deployed, every one designed to run locally and respect user data.
     </p>
 
-    <div class="section">
-      <h2 class="section-title">Education</h2>
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">GLA University</span>
-          <span class="item-date">2023 – Present</span>
+    <!-- EDUCATION + AWARDS SIDE BY SIDE -->
+    <div class="two-col">
+
+      <!-- LEFT: EDUCATION -->
+      <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-row">
+          <span class="edu-title">GLA University</span>
+          <span class="edu-date">2023 – Present</span>
         </div>
-        <div class="item-subtitle">Bachelor of Technology in Computer Science (B.Tech CS) - Freshman</div>
+        <div class="edu-sub">B.Tech in Computer Science — Freshman</div>
+      </div>
+
+      <!-- RIGHT: AWARDS -->
+      <div class="section">
+        <h2 class="section-title">Awards & Recognition</h2>
+        <div class="award-item">
+          <span class="award-bullet">▸</span>
+          <span><strong>Top 100 Finalist</strong> — Meta OpenEnv Hackathon (32K+ teams)</span>
+        </div>
+        <div class="award-item">
+          <span class="award-bullet">▸</span>
+          <span><strong>Selected</strong> — UOE Summer of Code 2026 (CrisisGuard AI)</span>
+        </div>
+        <div class="award-item">
+          <span class="award-bullet">▸</span>
+          <span><strong>Winner</strong> — Microsoft Build AI Hackathon (EcoNudge SDK)</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- KEY PROJECTS -->
+    <div class="section">
+      <h2 class="section-title">Selected Projects</h2>
+
+      <!-- CrisisGuard -->
+      <div class="item">
+        <div class="item-row">
+          <span class="item-title">CrisisGuard AI — Privacy-First Mental Health Crisis Detection</span>
+          <span class="item-badge">SELF-INITIATED</span>
+        </div>
         <div class="item-desc">
-          Currently pursuing foundational and advanced studies in algorithms, data structures, and machine learning.
+          <ul>
+            <li>Engineered a clinical-grade NLP engine detecting <strong>9 crisis categories</strong> that runs <strong>100% in-browser</strong> via edge computing — zero data ever leaves the device.</li>
+            <li>Integrated GPS-based counselor finder mapped to <strong>13+ countries</strong>. Selected for UOE Summer of Code 2026.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EcoNudge SDK -->
+      <div class="item">
+        <div class="item-row">
+          <span class="item-title">EcoNudge SDK — The Sustainability Layer for the Internet</span>
+          <span class="item-badge team">TEAM PROJECT</span>
+        </div>
+        <div class="item-sub">Lead Architect & Spatial Engineer</div>
+        <div class="item-desc">
+          <ul>
+            <li>Architected a headless React SDK with <strong>sub-50ms latency</strong> that injects carbon-intelligence into e-commerce checkout flows.</li>
+            <li>Built a <strong>3D WebGL Earth visualization</strong> with mathematical shaders reflecting real-world environmental data. Won the Microsoft Build AI Hackathon.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ZeroTrust Guardian -->
+      <div class="item">
+        <div class="item-row">
+          <span class="item-title">ZeroTrust Guardian — AI-Powered Digital Safety</span>
+          <span class="item-badge team">TEAM PROJECT</span>
+        </div>
+        <div class="item-sub">Team Lead & Architect</div>
+        <div class="item-desc">
+          <ul>
+            <li>Led engineering of a multi-agent AI Chrome extension that validates SSL certificates and detects psychological dark patterns in real-time.</li>
+            <li>Designed the <strong>local-first privacy architecture</strong> — all AI inference runs on-device. Threats are distilled into plain-English summaries.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MedSafe AI -->
+      <div class="item">
+        <div class="item-row">
+          <span class="item-title">MedSafe AI — On-Device Clinical Pharmacologist</span>
+          <span class="item-badge">HACKATHON</span>
+        </div>
+        <div class="item-desc">
+          <ul>
+            <li>Ran a <strong>1-Billion parameter Llama 3.2 LLM entirely in-browser</strong> via WebGPU to analyze drug-food-supplement interactions with zero cloud dependency.</li>
+            <li>Integrated local OCR prescription scanning and Web Speech API for a fully private, HIPAA-compliant pharmacological assistant.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Meta Hackathon -->
+      <div class="item">
+        <div class="item-row">
+          <span class="item-title">SynthAudit.Env — Clinical Trial RL Benchmark (Meta Hackathon)</span>
+          <span class="item-badge">SOLO FINALIST</span>
+        </div>
+        <div class="item-desc">
+          <ul>
+            <li>Built an RL benchmark so rigorous that <strong>Meta's Llama 3.1 405B scored only 0.34/1</strong>. Solo freshman selected for the Top 100 Bangalore Finals against 32,000+ teams of senior engineers.</li>
+          </ul>
         </div>
       </div>
     </div>
 
+    <!-- SKILLS -->
     <div class="section">
-      <h2 class="section-title">Awards & Achievements</h2>
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">Top Finalist – Meta OpenEnv Hackathon (Bangalore)</span>
-          <span class="item-date">2024</span>
-        </div>
-        <div class="item-desc">
-          <ul>
-            <li>Selected as a Solo Participant out of 32,000+ team submissions for Meta's 48-hour offline finals.</li>
-            <li>Built an autonomous clinical trial auditing RL environment and SynthAudit benchmark that exposed limitations in Meta's Llama 3.1 405B model.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">Selected Participant – UOE Summer of Code</span>
-          <span class="item-date">2026</span>
-        </div>
-        <div class="item-desc">
-          <ul>
-            <li>Selected for my project "CrisisGuard AI", demonstrating exceptional capabilities in client-side NLP and data privacy.</li>
-          </ul>
-        </div>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-row">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">JavaScript / TypeScript</span>
+        <span class="skill-pill">C / C++</span>
+        <span class="skill-pill">PyTorch</span>
+        <span class="skill-pill">TensorFlow</span>
+        <span class="skill-pill">Reinforcement Learning</span>
+        <span class="skill-pill">Natural Language Processing</span>
+        <span class="skill-pill">WebGPU</span>
+        <span class="skill-pill">Edge Computing</span>
+        <span class="skill-pill">React.js & Next.js</span>
+        <span class="skill-pill">FastAPI</span>
+        <span class="skill-pill">WebGL / Three.js</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">Git / GitHub</span>
+        <span class="skill-pill">Figma</span>
+        <span class="skill-pill">Privacy-First Architecture</span>
       </div>
     </div>
 
+    <!-- MOTIVATION -->
     <div class="section">
-      <h2 class="section-title">Key Projects (Experience)</h2>
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">CrisisGuard AI</span>
-          <span class="item-date">Self-Initiated</span>
-        </div>
-        <div class="item-subtitle">Privacy-First Mental Health Crisis Detection</div>
-        <div class="item-desc">
-          <ul>
-            <li>Developed a clinical-grade NLP engine that runs 100% locally in the browser using edge computing.</li>
-            <li>Detects 9 categories of mental health crises with zero data surveillance.</li>
-            <li>Integrated a secure GPS-based counselor finder mapped to 13+ countries.</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">MedGraph-AI</span>
-          <span class="item-date">Self-Initiated</span>
-        </div>
-        <div class="item-subtitle">Evidence-Based Medical Chatbot</div>
-        <div class="item-desc">
-          <ul>
-            <li>Built a healthcare knowledge graph system connecting drugs, treatments, and symptoms.</li>
-            <li>Implemented Retrieval-Augmented Generation (RAG) to ensure AI responses are grounded in structured, factual data rather than hallucinations.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    
-    <div class="page-number">1 / 2</div>
-  </div>
-
-  <!-- PAGE 2 -->
-  <div class="page">
-    <div class="section">
-      <h2 class="section-title">Key Projects (Continued)</h2>
-      
-      <div class="item">
-        <div class="item-header">
-          <span class="item-title">Breast Cancer Diagnostic Model</span>
-          <span class="item-date">Self-Initiated</span>
-        </div>
-        <div class="item-subtitle">Machine Learning for Oncology</div>
-        <div class="item-desc">
-          <ul>
-            <li>Developed an end-to-end predictive machine learning pipeline to classify breast cancer tumors as benign or malignant based on cellular data.</li>
-            <li>Performed extensive data preprocessing and feature engineering to maximize recall and precision, crucial for medical diagnostic tools.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Skills & Technologies</h2>
-      <div class="skills-grid">
-        <div>
-          <div class="skill-category">Programming Languages</div>
-          <div class="skill-list">Python, JavaScript, HTML, CSS, C/C++</div>
-        </div>
-        <div>
-          <div class="skill-category">AI & Machine Learning</div>
-          <div class="skill-list">Reinforcement Learning, NLP, Knowledge Graphs, RAG, Edge Computing</div>
-        </div>
-        <div>
-          <div class="skill-category">Data Science Libraries</div>
-          <div class="skill-list">TensorFlow, Scikit-learn, Pandas, NumPy</div>
-        </div>
-        <div>
-          <div class="skill-category">Tools & Frameworks</div>
-          <div class="skill-list">Docker, Git/GitHub, Meta OpenEnv, Gymnasium</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2 class="section-title">Motivation & Interdisciplinary Approach</h2>
+      <h2 class="section-title">Why Apple Developer Academy</h2>
       <p class="summary" style="margin-bottom: 0;">
-        My approach to technology is inherently interdisciplinary—I do not just write code; I design systems that sit at the intersection of healthcare ethics, data privacy, and advanced machine learning. By combining edge computing with mental health (CrisisGuard) and strict data structuring with medical diagnostics (MedGraph-AI), I aim to create interfaces that are not only technologically advanced but also deeply empathetic. I am excited to bring this relentless work ethic and passion for human-centric design to the 9-month learning journey at the Apple Developer Academy.
+        My work is inherently interdisciplinary — I don't just write code, I design systems at the intersection of healthcare ethics, data privacy, and spatial computing. From running billion-parameter LLMs in browsers to building 3D sustainability dashboards, I've proven that powerful AI can be invisible, local, and deeply human. I want to bring this relentless drive to the Academy's 9-month journey, collaborating with diverse minds to build technology that people genuinely trust.
       </p>
     </div>
-    
-    <div class="page-number">2 / 2</div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span>Sumit Saraswat · CV · Apple Developer Academy Indonesia</span>
+      <a href="https://sumitsaraswat362.github.io/Portfolio/">↗ Interactive Web Portfolio</a>
+    </div>
+
   </div>
 
 </body>
