@@ -806,13 +806,13 @@ button { cursor: none; }
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-top: 0;
-  color: #ffffff;
+  color: var(--text-1);
   max-width: 800px;
 }
 .petros-subhead {
   font-size: clamp(16px, 1.5vw, 18px);
   line-height: 1.5;
-  color: #a1a1a6;
+  color: var(--text-2);
   margin-top: 24px;
   max-width: 700px;
 }
