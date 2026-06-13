@@ -66,7 +66,7 @@
     }
     .header-right {
       text-align: right;
-      font-size: 10.5px;
+      font-size: 11px;
       color: var(--muted);
       line-height: 1.7;
       font-weight: 500;
@@ -79,7 +79,7 @@
 
     /* ===== SUMMARY ===== */
     .summary {
-      font-size: 10.5px;
+      font-size: 11px;
       line-height: 1.55;
       color: #333;
       margin-bottom: 12px;
@@ -90,7 +90,7 @@
     /* ===== SECTION ===== */
     .section { margin-bottom: 10px; }
     .section-title {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1.8px;
@@ -116,12 +116,12 @@
       align-items: baseline;
     }
     .item-title {
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--text);
     }
     .item-badge {
-      font-size: 9px;
+      font-size: 9.5px;
       font-weight: 600;
       color: white;
       background: var(--accent);
@@ -134,13 +134,13 @@
       background: #30d158;
     }
     .item-sub {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 600;
       color: var(--accent);
       margin-top: 1px;
     }
     .item-desc {
-      font-size: 10px;
+      font-size: 10.5px;
       color: #444;
       line-height: 1.5;
       margin-top: 2px;
@@ -160,16 +160,16 @@
       align-items: baseline;
     }
     .edu-title {
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 700;
     }
     .edu-date {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 500;
       color: var(--muted);
     }
     .edu-sub {
-      font-size: 10px;
+      font-size: 10.5px;
       color: #444;
       margin-top: 1px;
     }
@@ -181,7 +181,7 @@
       gap: 5px;
     }
     .skill-pill {
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 600;
       background: var(--light-bg);
       color: var(--text);
@@ -196,7 +196,7 @@
       gap: 6px;
       align-items: baseline;
       margin-bottom: 3px;
-      font-size: 10px;
+      font-size: 10.5px;
       color: #444;
       line-height: 1.45;
     }
@@ -220,7 +220,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 9px;
+      font-size: 9.5px;
       color: var(--muted);
       border-top: 1px solid var(--border);
       padding-top: 6px;
@@ -234,7 +234,7 @@
     /* ===== PROJECT LINKS ===== */
     .project-links {
       margin-top: 2px;
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 600;
     }
     .project-links a {
@@ -311,6 +311,23 @@
     <div class="section">
       <h2 class="section-title">Selected Projects</h2>
 
+      <!-- Annapurna -->
+      <div class="item">
+        <div class="item-row">
+          <span class="item-title">Annapurna — Autonomous Cold-Chain Logistics AI</span>
+          <span class="item-badge team">TEAM PROJECT</span>
+        </div>
+        <div class="item-sub">AI Architect & Full-Stack Lead</div>
+        <div class="item-desc">
+          <ul>
+            <li>Engineered an Edge-AI powered platform that actively detects refrigeration failures in transit and autonomously reroutes perishable cargo via an intelligent distress marketplace to prevent food waste.</li>
+            <li>Built the frontend using Next.js, integrated with a Supabase backend and LoRaWAN IoT fallbacks, ensuring continuous temperature tracking even in zero-connectivity dead zones.</li>
+          </ul>
+        </div>
+        <div class="project-links"><a href="https://annapurna-alpha.vercel.app">↗ Visit Site</a><a href="https://github.com/sumitsaraswat362/Annapurna">⌘ GitHub</a></div>
+      </div>
+
+
       <!-- CrisisGuard -->
       <div class="item">
         <div class="item-row">
@@ -342,37 +359,22 @@
         <div class="project-links"><a href="https://econudge-sdk.vercel.app">↗ Visit Site</a><a href="https://youtu.be/5LO6Cpq6ecQ?si=qpTTGpVrZw1w5HwK">▶ YouTube</a><a href="https://github.com/sumitsaraswat362/econudge-sdk">⌘ GitHub</a></div>
       </div>
 
-      <!-- Clinical Trial Auditor -->
+      
+      <!-- SynthAudit & Clinical Trial Auditor -->
       <div class="item">
         <div class="item-row">
-          <span class="item-title">Clinical Trial Auditor — AI Agent for Protocol Deviation Triage</span>
-          <span class="item-badge">META HACKATHON</span>
+          <span class="item-title">SynthAudit & Clinical Trial Auditor — AI Agent for Protocol Triage</span>
+          <span class="item-badge">META HACKATHON FINALIST</span>
         </div>
         <div class="item-desc">
           <ul>
             <li>Built an autonomous RL environment where AI agents learn to triage clinical protocol deviations. Engineered a benchmark so rigorous that <strong>Meta's Llama 3.1 405B scored only 0.34/1</strong>.</li>
-            <li>Cleared Round 1 as a <strong>solo freshman</strong> against <strong>32,000+ teams</strong> of senior developers to advance to the Top 800 nationally.</li>
+            <li>Cleared Round 1 against <strong>32,000+ teams</strong> and trained a custom model that <strong>increased performance by 283%</strong>, securing a spot in the Top 100 National Finals as the <strong>only solo freshman</strong>.</li>
           </ul>
         </div>
-        <div class="project-links"><a href="https://github.com/sumitsaraswat362/clinical-trial-auditor">⌘ GitHub</a> <a href="https://drive.google.com/file/d/1p6hsBi0v9EWxFhbuRywn0NHFlVuHcwLe/view?usp=sharing">[Round 1 Certificate]</a></div>
+        <div class="project-links"><a href="https://github.com/sumitsaraswat362/clinical-trial-auditor">⌘ GitHub</a> <a href="https://drive.google.com/file/d/1Xh1TJI66z11OKxwj2l7xOEci9D-SREj6/view?usp=share_link">[National Finalist Certificate]</a></div>
       </div>
-
-      <!-- SynthAudit -->
-      <div class="item">
-        <div class="item-row">
-          <span class="item-title">SynthAudit.Env — Clinical Trial RL Benchmark</span>
-          <span class="item-badge">SOLO FINALIST</span>
-        </div>
-        <div class="item-desc">
-          <ul>
-            <li>For Round 2 (Top 100 Bangalore Finals), I trained a custom model on the clinical triage benchmark and <strong>increased its performance by 283%</strong>, proving viability against state-of-the-art models.</li>
-            <li>Selected for the Finals as the <strong>only solo freshman</strong> among teams of senior industry veterans.</li>
-          </ul>
-        </div>
-        <div class="project-links"><a href="https://github.com/sumitsaraswat362/SynthAudit.Env">⌘ GitHub</a> <a href="https://drive.google.com/file/d/1Xh1TJI66z11OKxwj2l7xOEci9D-SREj6/view?usp=share_link">[Round 2 Certificate]</a></div>
-      </div>
-
-      <!-- MedSafe AI -->
+<!-- MedSafe AI -->
       <div class="item">
         <div class="item-row">
           <span class="item-title">MedSafe AI — On-Device Clinical Pharmacologist</span>
